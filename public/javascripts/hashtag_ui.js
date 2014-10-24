@@ -25,40 +25,53 @@
     });
   };
 
-  HashtagUi.prototype.getMessage = function () {
-    var message = this.$rootEl.find('#msg').val();
-    this.$rootEl.find('#msg').val('');
-    message = message.split(',');
+  HashtagUi.prototype.getHashtag = function () {
+    var enteredHashtag = this.$rootEl.find('#tag').val();
+    this.$rootEl.find('#tag').val('');
+    enteredHashtag = enteredHashtag.split(',');
     debugger
-    return message;
+    return enteredHashtag;
   };
 
-  HashtagUi.prototype.sendMessage = function () {
-    var input = this.getMessage();
-    this.hashtag.sendMessage(input);
+  HashtagUi.prototype.sendHashtag = function () {
+    var input = this.getHashtag();
+    this.hashtag.sendHashtag(input);
   };
+  
+  HashtagUi.prototype.reset = function () {
+    this.$rootEl.find('.tags').empty();
+    this.hashtag.resetHashtags();
+  }
 
 })();
 
 $(function () {
-   var socket = io();
-   var hashtag = new App.Hashtag(socket);
-   var ui = new App.HashtagUi({
-     hashtag: hashtag,
-     $rootEl: $('body')
-   });
-  
+  var socket = io();
+  var hashtag = new App.Hashtag(socket);
+  var ui = new App.HashtagUi({
+   hashtag: hashtag,
+   $rootEl: $('body')
+  });
+   
   socket.on('hashtagUpdate', function (data) {
     ui.hashtagList(data.hashtagList);
   });
-   
-  socket.on('message', function (data) {
-    var message = data.text;
-    ui.addMessage(message);
+
+  socket.on('enteredHashtag', function (data) {
+    var enteredHashtag = data.text;
+    ui.addHashtag(enteredHashtag);
   });
-  
+
   $('form').on('submit', function (event) {
     event.preventDefault();
-    ui.sendMessage();
+    ui.sendHashtag();
+    $('form').hide();
+    $('#reset').show();
+  });
+
+  $('#reset').on('click', function () {
+    ui.reset();
+    $('#reset').hide();
+    $('form').show();
   });
 });

@@ -7,10 +7,14 @@
     this.socket = socket;
   };
 
-  Hashtag.prototype.sendMessage = function (tags) {
+  Hashtag.prototype.sendHashtag = function (tags) {
     this.socket.emit('hashtagsGiven', { 
       tags: tags
     });
+  };
+  
+  Hashtag.prototype.resetHashtags = function () {
+    this.socket.emit('resetHashtags');
   };
   
 })();

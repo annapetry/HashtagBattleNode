@@ -5,13 +5,22 @@
     <script src="/socket.io/socket.io.js"></script>
     <script src="/javascripts/hashtag_ui.js"></script>
     <script src="/javascripts/hashtag.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/stylesheets/styles.css">
   </head>
   <body>
     <div class="container container-fluid">
       <div class="main">
         <div class="row header">
-          <h1 class="brand"># v #</h1>
+          <h1 class="brand">
+            Hashtag
+            <i class="fa fa-twitter"></i>
+            Battleground
+          </h1>
+          <button id="reset">
+            Reset Hashtags
+          </button>
        </div>
         <div class="row">
 
@@ -28,8 +37,8 @@
             <div class="form-group">
               <input class="form-control"
                      type="text"
-                     id="msg"
-                     placeholder="Enter your message here!">
+                     id="tag"
+                     placeholder="Enter hashtags here...KCAArgentina, RT">
             </div> <!-- Close of form-group -->
           </form>
         </div> <!-- Close of form-div -->

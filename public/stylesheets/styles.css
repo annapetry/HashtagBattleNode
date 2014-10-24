@@ -1,0 +1,22 @@
+@font-face {
+    font-family: brandFont;
+    src: url(neo.ttf);
+}
+* {
+  box-sizing: border-box;
+  font-family: 'Helvetica Neue','Helvetica',arial,sans-serif;;
+}
+.brand {
+  font-family: brandFont;
+  text-align: center;
+}
+#tag {
+  height: 120px;
+  font-size: 4em;
+  border: none;
+  border-bottom: thin solid #eee;
+  outline: none;
+}
+#reset {
+  display: none;
+}
