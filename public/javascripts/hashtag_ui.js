@@ -12,24 +12,21 @@
     this.$rootEl.find('.tags').empty();
     var that = this;
     Object.keys(hashtagList).forEach(function (tag) {
-      var $header = $('<h3 class="' + tag + '"></h3>');
+      var $col = $('<div class="col-md-3 single-tag"></div>')
+      var $header = $('<h3 class="tag-name"></h3>');
       $header.text(tag);
-      that.$rootEl.find('.tags').append($header);
-      
-      var $uList = $('<ul></ul>');
-      var $li = $('<li></li>');
-      $li.text(hashtagList[tag]);
-      $uList.append($li);
-      
-      that.$rootEl.find('.tags').append($uList);
+      var $count = $('<p class="count"></p>');
+      $count.text(hashtagList[tag]);
+      $col.append($header);
+      $col.append($count);
+      that.$rootEl.find('.tags').append($col);
     });
   };
 
   HashtagUi.prototype.getHashtag = function () {
     var enteredHashtag = this.$rootEl.find('#tag').val();
     this.$rootEl.find('#tag').val('');
-    enteredHashtag = enteredHashtag.split(',');
-    debugger
+    enteredHashtag = enteredHashtag.split(', ');
     return enteredHashtag;
   };
 

@@ -12,23 +12,23 @@
   <body>
     <div class="container container-fluid">
       <div class="main">
-        <div class="row header">
+        <header class="row header">
           <h1 class="brand">
             Hashtag
             <i class="fa fa-twitter"></i>
             Battleground
           </h1>
-          <button id="reset">
-            Reset Hashtags
-          </button>
-       </div>
+       </header> <!-- Close of header-->
+       <div class="row reset-button-div">
+         <button class="btn btn-default" id="reset">
+           Reset Hashtags
+         </button>
+       </div> <!-- Close of reset-button -->
         <div class="row">
 
-          <div class="msgs col-md-9">
-            <ul id="msgs"></ul>
+          <div class="col-md-12">
+            <div class="tags row"></div>
           </div>
-
-          <div class="tags col-md-2"></div>
 
         </div> <!-- Close of row -->
 
@@ -38,7 +38,7 @@
               <input class="form-control"
                      type="text"
                      id="tag"
-                     placeholder="Enter hashtags here...KCAArgentina, RT">
+                     placeholder="Enter Hashtags to Battle...">
             </div> <!-- Close of form-group -->
           </form>
         </div> <!-- Close of form-div -->
