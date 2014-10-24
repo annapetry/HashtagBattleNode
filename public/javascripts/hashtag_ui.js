@@ -11,9 +11,7 @@
   HashtagUi.prototype.hashtagList = function (hashtagList) {
     this.$rootEl.find('.tags').empty();
     var that = this;
-    
     Object.keys(hashtagList).forEach(function (tag) {
-      debugger
       var $header = $('<h3 class="' + tag + '"></h3>');
       $header.text(tag);
       that.$rootEl.find('.tags').append($header);
@@ -31,6 +29,7 @@
     var message = this.$rootEl.find('#msg').val();
     this.$rootEl.find('#msg').val('');
     message = message.split(',');
+    debugger
     return message;
   };
 
