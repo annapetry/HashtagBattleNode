@@ -1,5 +1,18 @@
-## Hashtag Battle
+# Hashtag Battleground
 
-##### Enter two or more hashtags and see who will reign _SUPREME_
+### Many will enter - only one will _WIN_
 
-A fun little Node.js app that tracks the number of posts (from individual users) with two or more of your specified hashtags.
+#### A fun little Twitter Hashtag Battle app using Node.js.
+
+##### See it live [HERE](http://hashtag-battleground.herokuapp.com)
+
+##### Key Features:
+  - Uses Socket.IO to maintain connection to Twitter API to access streaming tweets.
+  - Instantly updates counters to reflect increasing number of times tweets with the specified hashtags are tweeted.
+  - Restricts Users to one vote per contest. No cheating!
+
+##### Under the Hood:
+Node.js, Bootstrap, HTML5, CSS3
+
+##### TODO:
+Add instructions so Users know *how* to enter hashtags (they need to be 'comma + space' seperated).
