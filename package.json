@@ -17,6 +17,9 @@
     "node-static": "^0.7.4",
     "twitter": "0.2.x"
   },
+  "engines": {
+      "node": "0.10.x"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/annapetry/HashtagBattleNode/issues"
