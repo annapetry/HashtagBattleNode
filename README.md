@@ -16,6 +16,6 @@ Node.js, Bootstrap, HTML5, CSS3
 
 ##### TODO:
    - Allow for multiple visitors (currently only one web dyno exists)
-   -- Don't allow visitors to add/reset hashtags if a battle is in progress
-   -- OR
-   -- Let each visitor have their own battle (add more dynos)
+    - Don't allow visitors to add/reset hashtags if a battle is in progress
+    - OR
+    - Let each visitor have their own battle (add more dynos)
