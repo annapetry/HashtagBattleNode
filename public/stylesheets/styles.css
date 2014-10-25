@@ -57,6 +57,7 @@ header {
   overflow-x: scroll;
   overflow-y: hidden;
   font-family: tagFont;
+  display: inline-block;
 }
 .tag-name {
   font-size: 2em;

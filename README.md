@@ -8,7 +8,7 @@
 
 ##### Key Features:
   - Uses Socket.IO to maintain connection to Twitter API to access streaming tweets.
-  - Instantly updates counters to reflect increasing number of times tweets with the specified hashtags are tweeted.
+  - Instantly updates counters to reflect increasing number of tweets with the specified hashtags.
   - Restricts Users to one vote per contest. No cheating!
 
 ##### Under the Hood:
