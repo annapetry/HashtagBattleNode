@@ -15,4 +15,7 @@
 Node.js, Bootstrap, HTML5, CSS3
 
 ##### TODO:
-Add instructions so Users know *how* to enter hashtags (they need to be 'comma + space' seperated).
+   - Allow for multiple visitors (currently only one web dyno exists)
+   -- Don't allow visitors to add/reset hashtags if a battle is in progress
+   -- OR
+   -- Let each visitor have their own battle (add more dynos)

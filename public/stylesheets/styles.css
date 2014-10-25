@@ -66,3 +66,27 @@ header {
   font-family: tagFont;
   font-size: 5em;
 }
+#instructions{
+  display: none;
+}
+#info {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  font-size: 1.3em;
+  text-align: center;
+  background-color: #F5f5f5;
+  color: #FF5249;
+  padding: 10px;
+  padding-top: 20px;
+  border-radius: 6px;
+}
+#arrow-up {
+  width: 0;
+  height: 0;
+  margin-right: auto;
+  margin-left: auto;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid #F5f5f5;
+}

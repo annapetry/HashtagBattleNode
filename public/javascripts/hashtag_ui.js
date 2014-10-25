@@ -9,7 +9,8 @@
   };
   
   HashtagUi.prototype.hashtagList = function (hashtagList) {
-    this.$rootEl.find('.tags').empty();
+    var tags = this.$rootEl.find('.tags');
+    tags.empty();
     var that = this;
     Object.keys(hashtagList).forEach(function (tag) {
       var $col = $('<div class="col-md-3 single-tag"></div>')
@@ -19,13 +20,14 @@
       $count.text(hashtagList[tag]);
       $col.append($header);
       $col.append($count);
-      that.$rootEl.find('.tags').append($col);
+      tags.append($col);
     });
   };
 
   HashtagUi.prototype.getHashtag = function () {
-    var enteredHashtag = this.$rootEl.find('#tag').val();
-    this.$rootEl.find('#tag').val('');
+    var tag = this.$rootEl.find('#tag');
+    var enteredHashtag = tag.val();
+    tag.val('');
     enteredHashtag = enteredHashtag.split(', ');
     return enteredHashtag;
   };
@@ -38,8 +40,8 @@
   HashtagUi.prototype.reset = function () {
     this.$rootEl.find('.tags').empty();
     this.hashtag.resetHashtags();
-  }
-
+  };
+  
 })();
 
 $(function () {
@@ -63,6 +65,7 @@ $(function () {
     event.preventDefault();
     ui.sendHashtag();
     $('form').hide();
+    $('#instructions').hide();
     $('#reset').show();
   });
 
@@ -71,4 +74,8 @@ $(function () {
     $('#reset').hide();
     $('form').show();
   });
+
+  $('input').on('click', function () {
+    $('#instructions').show();
+  }); 
 });
