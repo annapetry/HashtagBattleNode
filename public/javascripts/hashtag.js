@@ -7,7 +7,7 @@
     this.socket = socket;
   };
 
-  Hashtag.prototype.sendHashtag = function (tags) {
+  Hashtag.prototype.sendHashtags = function (tags) {
     this.socket.emit('hashtagsGiven', { 
       tags: tags
     });

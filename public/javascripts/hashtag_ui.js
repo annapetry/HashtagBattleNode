@@ -8,7 +8,7 @@
     this.$rootEl = options.$rootEl;
   };
   
-  HashtagUi.prototype.hashtagList = function (hashtagList) {
+  HashtagUi.prototype.addToDOM = function (hashtagList) {
     var tags = this.$rootEl.find('.tags');
     tags.empty();
     var that = this;
@@ -24,17 +24,17 @@
     });
   };
 
-  HashtagUi.prototype.getHashtag = function () {
+  HashtagUi.prototype.getHashtags = function () {
     var tag = this.$rootEl.find('#tag');
-    var enteredHashtag = tag.val();
+    var enteredHashtags = tag.val();
     tag.val('');
-    enteredHashtag = enteredHashtag.split(', ');
-    return enteredHashtag;
+    enteredHashtags = enteredHashtags.split(', ');
+    return enteredHashtags;
   };
 
-  HashtagUi.prototype.sendHashtag = function () {
-    var input = this.getHashtag();
-    this.hashtag.sendHashtag(input);
+  HashtagUi.prototype.sendHashtags = function () {
+    var input = this.getHashtags();
+    this.hashtag.sendHashtags(input);
   };
   
   HashtagUi.prototype.reset = function () {
@@ -53,17 +53,17 @@ $(function () {
   });
    
   socket.on('hashtagUpdate', function (data) {
-    ui.hashtagList(data.hashtagList);
+    ui.addToDOM(data.hashtagList);
   });
 
   socket.on('enteredHashtag', function (data) {
-    var enteredHashtag = data.text;
-    ui.addHashtag(enteredHashtag);
+    var enteredHashtags = data.text;
+    ui.addHashtags(enteredHashtags);
   });
 
   $('form').on('submit', function (event) {
     event.preventDefault();
-    ui.sendHashtag();
+    ui.sendHashtags();
     $('form').hide();
     $('#instructions').hide();
     $('#reset').show();
@@ -78,4 +78,5 @@ $(function () {
   $('input').on('click', function () {
     $('#instructions').show();
   }); 
+
 });
