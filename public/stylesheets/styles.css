@@ -99,7 +99,7 @@ header {
 }
 #winner {
   -webkit-animation: fadein 2s;
-  background-color: rgba(255, 82, 73, 0.9);
+  background-color: #FF5249;
   color: #fff;
 }
 @-webkit-keyframes fadein {
