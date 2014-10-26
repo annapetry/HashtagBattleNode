@@ -38,7 +38,7 @@ header {
   opacity: 1;
 }
 #show-winner {
-  background-color: #FF5249;
+  background-color: #ff5349;
   color: #fff;
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 }
@@ -99,7 +99,7 @@ header {
 }
 #winner {
   -webkit-animation: fadein 2s;
-  background-color: #FF5249;
+  background-color: #ff5349;
   color: #fff;
 }
 @-webkit-keyframes fadein {
