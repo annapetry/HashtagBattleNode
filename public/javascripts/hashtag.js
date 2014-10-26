@@ -1,3 +1,5 @@
+// Intermediary between client and server
+
 (function () {
   if (typeof App === 'undefined') {
     window.App = {};
@@ -19,6 +21,6 @@
   
   Hashtag.prototype.findWinner = function () {
     this.socket.emit('findWinner');
-  }
+  };
   
 })();
