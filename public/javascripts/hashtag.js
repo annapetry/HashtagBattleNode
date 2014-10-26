@@ -17,4 +17,8 @@
     this.socket.emit('resetHashtags');
   };
   
+  Hashtag.prototype.findWinner = function () {
+    this.socket.emit('findWinner');
+  }
+  
 })();

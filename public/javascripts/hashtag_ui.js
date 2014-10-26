@@ -8,12 +8,17 @@
     this.$rootEl = options.$rootEl;
   };
   
-  HashtagUi.prototype.addToDOM = function (hashtagList) {
+  HashtagUi.prototype.addToDOM = function (data) {
+    var hashtagList = data.hashtagList;
+    var winner = data.winner;
     var tags = this.$rootEl.find('.tags');
     tags.empty();
     var that = this;
     Object.keys(hashtagList).forEach(function (tag) {
-      var $col = $('<div class="col-md-3 single-tag"></div>')
+      var $col = $('<div class="col-md-3 single-tag"></div>');
+      if (winner && winner === tag) {
+        $col.attr('id', 'winner');
+      }
       var $header = $('<h3 class="tag-name"></h3>');
       $header.text(tag);
       var $count = $('<p class="count"></p>');
@@ -42,6 +47,10 @@
     this.hashtag.resetHashtags();
   };
   
+  HashtagUi.prototype.findWinner = function () {
+    this.hashtag.findWinner();
+  };
+  
 })();
 
 $(function () {
@@ -53,7 +62,7 @@ $(function () {
   });
    
   socket.on('hashtagUpdate', function (data) {
-    ui.addToDOM(data.hashtagList);
+    ui.addToDOM(data);
   });
 
   socket.on('enteredHashtag', function (data) {
@@ -67,16 +76,22 @@ $(function () {
     $('form').hide();
     $('#instructions').hide();
     $('#reset').show();
+    $('#show-winner').show();
   });
 
   $('#reset').on('click', function () {
     ui.reset();
     $('#reset').hide();
+    $('#show-winner').hide();
     $('form').show();
   });
 
   $('input').on('click', function () {
-    $('#instructions').show();
+    $('#instructions').fadeToggle("fast", "linear");
   }); 
+  
+  $('#show-winner').on('click', function () {
+    ui.findWinner();
+  });
 
 });
